@@ -1,7 +1,7 @@
 <template>
   <div class="content-wrapper">
     <div class="left">
-      <div class="module total-user">total-user</div>
+      <div class="module total-user"><total-user></total-user></div>
       <div class="module average-age">average-age</div>
       <div class="module total-device">total-device</div>
       <div class="module total-gender">total-gender</div>
@@ -22,6 +22,62 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import TotalUser from "@/modules/total-user.vue";
+import useData from "@/compositions/useData";
+
+const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: true });
+
+const category1 = [
+  {
+    name: "ALL",
+    key: "all",
+  },
+  {
+    name: "北京",
+    key: "beijing",
+  },
+  {
+    name: "上海",
+    key: "shanghai",
+  },
+  {
+    name: "深圳",
+    key: "shenzhen",
+  },
+  {
+    name: "杭州",
+    key: "hangzhou",
+  },
+  {
+    name: "南京",
+    key: "nanjing",
+  },
+  {
+    name: "武汉",
+    key: "wuhan",
+  },
+];
+const category2 = [
+  {
+    name: "订单量",
+    key: "order",
+  },
+  {
+    name: "销售额",
+    key: "sale",
+  },
+  {
+    name: "用户数",
+    key: "user",
+  },
+  {
+    name: "退单量",
+    key: "return",
+  },
+];
+</script>
 
 <style lang="less" scoped>
 .content-wrapper {
