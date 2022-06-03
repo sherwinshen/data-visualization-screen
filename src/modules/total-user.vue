@@ -2,12 +2,12 @@
   <div class="total-user">
     <div class="title">外卖用户总数</div>
     <div class="subtitle">User Total Count</div>
-    <count-to class="total-num" l="preTodayUser" :endVal="todayUser" :duration="countToDuration"></count-to>
+    <count-to class="total-num" :start-val="startTodayUser" :end-val="todayUser" :duration="countToDuration"></count-to>
     <div class="growth-wrapper">
       <div class="growth-day">
         每日增长率:
         <count-to
-          :start-val="preGrowthLastDay"
+          :start-val="startGrowthLastDay"
           :end-val="growthLastDay"
           :duration="countToDuration"
           :decimals="2"
@@ -17,7 +17,7 @@
       <div class="growth-month">
         每月增长率:
         <count-to
-          :start-val="preGrowthLastMonth"
+          :start-val="startGrowthLastMonth"
           :end-val="growthLastMonth"
           :duration="countToDuration"
           :decimals="2"
@@ -26,13 +26,12 @@
       </div>
     </div>
     <div class="percent-wrapper">
-      <div class="percent" :style="`width: ${growthLastDay}%`"></div>
+      <div class="percent" :style="`width: ${Math.min(growthLastDay, 100)}%`"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { CountTo } from "vue3-count-to";
 import { countToDuration } from "@/const";
 
 const props = withDefaults(
@@ -48,35 +47,31 @@ const props = withDefaults(
   }
 );
 
-const preTodayUser = ref(0);
-const preGrowthLastDay = ref(0);
-const preGrowthLastMonth = ref(0);
+const startTodayUser = ref(0);
+const startGrowthLastDay = ref(0);
+const startGrowthLastMonth = ref(0);
 watch(
   () => props.todayUser,
   (newVal, oldVal) => {
-    preTodayUser.value = oldVal;
+    startTodayUser.value = oldVal;
   }
 );
 watch(
   () => props.growthLastDay,
   (newVal, oldVal) => {
-    preGrowthLastDay.value = oldVal;
+    startGrowthLastDay.value = oldVal;
   }
 );
 watch(
   () => props.growthLastMonth,
   (newVal, oldVal) => {
-    preGrowthLastMonth.value = oldVal;
+    startGrowthLastMonth.value = oldVal;
   }
 );
 </script>
 
 <style lang="less" scoped>
 .total-user {
-  width: 100%;
-  height: 100%;
-  padding: 20px 40px;
-  box-sizing: border-box;
   .total-num {
     font-size: 68px;
     font-weight: 500;

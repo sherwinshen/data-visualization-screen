@@ -1,5 +1,5 @@
 import { getUserData, getMapData } from "@/api/index";
-import { duration } from "@/const";
+import { duration, colors } from "@/const";
 
 export default function ({ once = true }) {
   const userData = ref({}) as any; // 用户数据
@@ -24,6 +24,8 @@ export default function ({ once = true }) {
             startValue: ageData.value[index].value,
             value: item.value,
             axis: item.key,
+            color: colors[index],
+            type: "年龄分布",
           };
           ageData.value = [...ageData.value];
         } else {
@@ -31,6 +33,8 @@ export default function ({ once = true }) {
             startValue: 0,
             value: item.value,
             axis: item.key,
+            color: colors[index],
+            type: "年龄分布",
           });
         }
       });
@@ -61,6 +65,7 @@ export default function ({ once = true }) {
   onMounted(() => {
     requestData();
   });
+
   onBeforeMount(() => {
     task && clearInterval(task);
   });
