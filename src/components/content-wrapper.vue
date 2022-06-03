@@ -1,7 +1,14 @@
 <template>
   <div class="content-wrapper">
     <div class="left">
-      <div class="module total-user"><total-user></total-user></div>
+      <div class="module total-user">
+        <total-user
+          ref="totalUser"
+          :today-user="userData.userToday"
+          :growth-last-day="+userData.userGrowthLastDay || 0"
+          :growth-last-month="+userData.userGrowthLastMonth || 0"
+        ></total-user>
+      </div>
       <div class="module average-age">average-age</div>
       <div class="module total-device">total-device</div>
       <div class="module total-gender">total-gender</div>
@@ -27,7 +34,7 @@
 import TotalUser from "@/modules/total-user.vue";
 import useData from "@/compositions/useData";
 
-const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: true });
+const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
 
 const category1 = [
   {

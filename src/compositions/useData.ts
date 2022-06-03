@@ -1,4 +1,5 @@
 import { getUserData, getMapData } from "@/api/index";
+import { duration } from "@/const";
 
 export default function ({ once = true }) {
   const userData = ref({}) as any; // 用户数据
@@ -47,15 +48,13 @@ export default function ({ once = true }) {
       console.log(err);
     }
   };
-  const requestData = () => {
-    setTimeout(async () => {
-      mapData.value = await getMapData(); // 地图数据
-      await getAndHandleUserData();
-    }, 1000);
+  const requestData = async () => {
+    mapData.value = getMapData(); // 地图数据
+    getAndHandleUserData();
     if (!once) {
       task = setInterval(async () => {
-        await getAndHandleUserData();
-      }, 8000);
+        getAndHandleUserData();
+      }, duration);
     }
   };
 

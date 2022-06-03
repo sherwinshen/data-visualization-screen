@@ -13,7 +13,8 @@
     "element-resize-detector": "^1.2.4",
     "less": "^4.1.2",
     "lodash": "^4.17.21",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue3-count-to": "^1.1.2"
   },
   "devDependencies": {
     "@types/element-resize-detector": "^1.1.3",
