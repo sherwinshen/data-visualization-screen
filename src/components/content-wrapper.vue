@@ -18,7 +18,9 @@
       <div class="module sale-category">sale-category</div>
     </div>
     <div class="right">
-      <div class="module center-header">center-header</div>
+      <div class="module center-header">
+        <center-header :data="userData"></center-header>
+      </div>
       <div class="module country-category">country-category</div>
       <div class="inline">
         <div class="module sale-data">sale-data</div>
@@ -35,6 +37,7 @@
 <script lang="ts" setup>
 import TotalUser from "@/modules/total-user.vue";
 import TotalGender from "@/modules/total-gender.vue";
+import CenterHeader from "@/modules/center-header.vue";
 import useData from "@/compositions/useData";
 
 const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
