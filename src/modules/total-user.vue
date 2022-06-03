@@ -1,5 +1,5 @@
 <template>
-  <div class="total-user">
+  <div class="total-user-wrapper">
     <div class="title">外卖用户总数</div>
     <div class="subtitle">User Total Count</div>
     <count-to class="total-num" :start-val="startTodayUser" :end-val="todayUser" :duration="countToDuration"></count-to>
@@ -71,7 +71,7 @@ watch(
 </script>
 
 <style lang="less" scoped>
-.total-user {
+.total-user-wrapper {
   .total-num {
     font-size: 68px;
     font-weight: 500;

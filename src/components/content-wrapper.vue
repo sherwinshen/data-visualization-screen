@@ -11,7 +11,9 @@
       </div>
       <div class="module average-age">average-age</div>
       <div class="module total-device">total-device</div>
-      <div class="module total-gender">total-gender</div>
+      <div class="module total-gender">
+        <total-gender :data="userData.gender"></total-gender>
+      </div>
       <div class="module rider-growth">rider-growth</div>
       <div class="module sale-category">sale-category</div>
     </div>
@@ -32,6 +34,7 @@
 
 <script lang="ts" setup>
 import TotalUser from "@/modules/total-user.vue";
+import TotalGender from "@/modules/total-gender.vue";
 import useData from "@/compositions/useData";
 
 const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
