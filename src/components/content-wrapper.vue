@@ -21,13 +21,21 @@
       <div class="module center-header">
         <center-header :data="userData"></center-header>
       </div>
-      <div class="module country-category">country-category</div>
+      <div class="module country-category">
+        <nav-menu :data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"></nav-menu>
+      </div>
       <div class="inline">
         <div class="module sale-data">sale-data</div>
         <div class="module plan-list">plan-list</div>
       </div>
       <div class="inline">
-        <div class="module order-trend">order-trend</div>
+        <div class="order-trend">
+          <div class="module sale-category">
+            <nav-menu :data="['订单量', '销售额', '用户数', '退单量']" bg-color="#9dc35b"></nav-menu>
+          </div>
+          <div class="module average-view">average-view</div>
+          <div class="module schedule-view"></div>
+        </div>
         <div class="module sale-rank">sale-rank</div>
       </div>
     </div>
@@ -38,6 +46,7 @@
 import TotalUser from "@/modules/total-user.vue";
 import TotalGender from "@/modules/total-gender.vue";
 import CenterHeader from "@/modules/center-header.vue";
+import NavMenu from "@/components/nav-menu.vue";
 import useData from "@/compositions/useData";
 
 const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
@@ -139,6 +148,7 @@ const category2 = [
     }
     .country-category {
       height: 50px;
+      padding: 0px;
     }
     .sale-data {
       height: 1000px;
@@ -153,6 +163,23 @@ const category2 = [
       height: 650px;
       width: 1920px;
     }
+    .sale-category {
+      height: 60px;
+      width: 1920px;
+      margin-bottom: 24px;
+      padding: 0px;
+    }
+
+    .average-view {
+      height: 362px;
+      width: 1920px;
+      margin-bottom: 24px;
+    }
+    .schedule-view {
+      height: 180px;
+      width: 1920px;
+    }
+
     .sale-rank {
       height: 650px;
       width: 1012px;
