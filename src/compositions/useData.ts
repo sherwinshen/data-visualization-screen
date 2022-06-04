@@ -2,6 +2,7 @@ import { getUserData, getMapData } from "@/api/index";
 import { duration, colors } from "@/const";
 
 export default function ({ once = true }) {
+  const ready = ref(false);
   const userData = ref({}) as any; // 用户数据
   const mapData = ref({}) as any; // 地图数据
   const ageData = ref([]) as any; // 年龄数据
@@ -54,7 +55,11 @@ export default function ({ once = true }) {
   };
   const requestData = async () => {
     mapData.value = getMapData(); // 地图数据
-    getAndHandleUserData();
+    await getAndHandleUserData();
+    // 为体现效果延后3s展示内容
+    setTimeout(() => {
+      ready.value = true;
+    }, 3000);
     if (!once) {
       task = setInterval(async () => {
         getAndHandleUserData();
@@ -71,6 +76,7 @@ export default function ({ once = true }) {
   });
 
   return {
+    ready,
     mapData,
     userData,
     ageData,

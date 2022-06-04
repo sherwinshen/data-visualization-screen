@@ -94,6 +94,9 @@ watch(
   () => props.data,
   (newProps, oldProps) => {
     initData(newProps, oldProps);
+  },
+  {
+    immediate: true,
   }
 );
 </script>

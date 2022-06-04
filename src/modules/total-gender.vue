@@ -51,6 +51,9 @@ watch(
     endMale.value = newVal?.[0]?.value || 0;
     startFemale.value = oldVal?.[1]?.value || 0;
     endFemale.value = newVal?.[1]?.value || 0;
+  },
+  {
+    immediate: true,
   }
 );
 </script>

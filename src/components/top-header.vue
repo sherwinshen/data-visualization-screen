@@ -68,7 +68,7 @@ const { time } = useClock();
       color: @main-color;
       font-size: 46px;
       width: 200px;
-      margin-left: 40px;
+      margin-left: 4px;
     }
   }
 }

@@ -53,19 +53,28 @@ const startGrowthLastMonth = ref(0);
 watch(
   () => props.todayUser,
   (newVal, oldVal) => {
-    startTodayUser.value = oldVal;
+    startTodayUser.value = oldVal || 0;
+  },
+  {
+    immediate: true,
   }
 );
 watch(
   () => props.growthLastDay,
   (newVal, oldVal) => {
-    startGrowthLastDay.value = oldVal;
+    startGrowthLastDay.value = oldVal || 0;
+  },
+  {
+    immediate: true,
   }
 );
 watch(
   () => props.growthLastMonth,
   (newVal, oldVal) => {
-    startGrowthLastMonth.value = oldVal;
+    startGrowthLastMonth.value = oldVal || 0;
+  },
+  {
+    immediate: true,
   }
 );
 </script>

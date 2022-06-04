@@ -1,5 +1,6 @@
 <template>
-  <div class="content-wrapper">
+  <div v-if="!ready">loading</div>
+  <div v-else class="content-wrapper">
     <div class="left">
       <div class="module total-user">
         <total-user
@@ -49,7 +50,7 @@ import CenterHeader from "@/modules/center-header.vue";
 import NavMenu from "@/components/nav-menu.vue";
 import useData from "@/compositions/useData";
 
-const { mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
+const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: true });
 
 const category1 = [
   {

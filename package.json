@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@antv/g2plot": "^2.4.18",
     "axios": "^0.27.2",
     "dayjs": "^1.11.2",
     "element-resize-detector": "^1.2.4",
