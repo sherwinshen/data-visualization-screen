@@ -13,7 +13,9 @@
       <div class="module average-age">
         <average-age :data="ageData" :avg-age="parseFloat(userData.averageAge) || 0"></average-age>
       </div>
-      <div class="module total-device">total-device</div>
+      <div class="module total-device">
+        <total-device :data="deviceData"></total-device>
+      </div>
       <div class="module total-gender">
         <total-gender :data="userData.gender"></total-gender>
       </div>
@@ -57,6 +59,7 @@ import NavMenu from "@/components/nav-menu.vue";
 import RiderGrowth from "@/modules/rider-growth.vue";
 import SaleCategory from "@/modules/sale-category.vue";
 import AverageAge from "@/modules/average-age.vue";
+import TotalDevice from "@/modules/total-device.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
