@@ -37,7 +37,7 @@ import { Rose, RoseOptions } from "@antv/g2plot";
 
 const props = withDefaults(
   defineProps<{
-    data: any[];
+    data: any;
   }>(),
   {}
 );

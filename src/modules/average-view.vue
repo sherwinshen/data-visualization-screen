@@ -25,7 +25,7 @@ import { countToDuration, colors } from "@/const";
 
 const props = withDefaults(
   defineProps<{
-    data: any[];
+    data: any;
   }>(),
   {}
 );

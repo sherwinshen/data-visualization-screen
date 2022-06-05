@@ -21,7 +21,7 @@ const { time } = useClock();
 
 const props = withDefaults(
   defineProps<{
-    data: any[];
+    data: any;
   }>(),
   {}
 );
