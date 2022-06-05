@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import ScreenContainer from "./components/screen-container/index.vue";
-import TopHeader from "./components/top-header.vue";
-import ContentWrapper from "./components/content-wrapper.vue";
+import ScreenContainer from "@/components/screen-container.vue";
+import TopHeader from "@/modules/top-header.vue";
+import ContentWrapper from "@/modules/content-wrapper.vue";
 </script>
 
 <style lang="less">
