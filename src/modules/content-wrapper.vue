@@ -187,12 +187,12 @@ const category2 = [
     }
 
     .average-view {
-      height: 362px;
+      height: 332px;
       width: 1920px;
       margin-bottom: 24px;
     }
     .schedule-view {
-      height: 180px;
+      height: 210px;
       width: 1920px;
     }
 

@@ -56,10 +56,10 @@ export default function ({ once = true }) {
   const requestData = async () => {
     mapData.value = getMapData(); // 地图数据
     await getAndHandleUserData();
-    // 为体现效果延后3s展示内容
+    // 为体现效果延后1s展示内容
     setTimeout(() => {
       ready.value = true;
-    }, 3000);
+    }, 1000);
     if (!once) {
       task = setInterval(async () => {
         getAndHandleUserData();

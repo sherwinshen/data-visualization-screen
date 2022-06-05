@@ -54,7 +54,7 @@ const initChart = () => {
         slider: {
           height: 25,
         },
-        padding: [35, 10, 65, 10],
+        padding: [30, 10, 65, 10],
         color: colors[0],
         supportCSSTransform: true, // 外部设置了 transform 则必须要设置为 true
       } as LineOptions;

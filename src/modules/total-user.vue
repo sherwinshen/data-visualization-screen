@@ -90,6 +90,7 @@ watch(
   .growth-wrapper {
     display: flex;
     align-items: center;
+    font-size: 30px;
     .growth-day {
       color: #c5fb79;
       flex: 1;

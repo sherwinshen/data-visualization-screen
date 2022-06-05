@@ -65,7 +65,7 @@ const initChart = () => {
     return;
   }
   // 更新图表数据
-  const data = props.data.reverse();
+  const data = (props.data as any).devices;
   chart.value.changeData(data);
 };
 
