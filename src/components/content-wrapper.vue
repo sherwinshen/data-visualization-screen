@@ -18,7 +18,9 @@
       <div class="module rider-growth">
         <rider-growth :data="userData.rider"></rider-growth>
       </div>
-      <div class="module sale-category">sale-category</div>
+      <div class="module sale-category">
+        <sale-category :data="userData.category"></sale-category>
+      </div>
     </div>
     <div class="right">
       <div class="module center-header">
@@ -51,6 +53,7 @@ import TotalGender from "@/modules/total-gender.vue";
 import CenterHeader from "@/modules/center-header.vue";
 import NavMenu from "@/components/nav-menu.vue";
 import RiderGrowth from "@/modules/rider-growth.vue";
+import SaleCategory from "@/modules/sale-category.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
