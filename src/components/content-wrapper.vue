@@ -15,7 +15,9 @@
       <div class="module total-gender">
         <total-gender :data="userData.gender"></total-gender>
       </div>
-      <div class="module rider-growth">rider-growth</div>
+      <div class="module rider-growth">
+        <rider-growth :data="userData.rider"></rider-growth>
+      </div>
       <div class="module sale-category">sale-category</div>
     </div>
     <div class="right">
@@ -48,9 +50,10 @@ import TotalUser from "@/modules/total-user.vue";
 import TotalGender from "@/modules/total-gender.vue";
 import CenterHeader from "@/modules/center-header.vue";
 import NavMenu from "@/components/nav-menu.vue";
+import RiderGrowth from "@/modules/rider-growth.vue";
 import useData from "@/compositions/useData";
 
-const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: true });
+const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
 
 const category1 = [
   {
