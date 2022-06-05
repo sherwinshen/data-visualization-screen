@@ -10,7 +10,9 @@
           :growth-last-month="+userData.userGrowthLastMonth || 0"
         ></total-user>
       </div>
-      <div class="module average-age">average-age</div>
+      <div class="module average-age">
+        <average-age :data="ageData" :avg-age="parseFloat(userData.averageAge) || 0"></average-age>
+      </div>
       <div class="module total-device">total-device</div>
       <div class="module total-gender">
         <total-gender :data="userData.gender"></total-gender>
@@ -54,6 +56,7 @@ import CenterHeader from "@/modules/center-header.vue";
 import NavMenu from "@/components/nav-menu.vue";
 import RiderGrowth from "@/modules/rider-growth.vue";
 import SaleCategory from "@/modules/sale-category.vue";
+import AverageAge from "@/modules/average-age.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
