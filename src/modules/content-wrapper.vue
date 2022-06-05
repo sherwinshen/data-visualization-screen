@@ -42,8 +42,10 @@
           <div class="module sale-category">
             <nav-menu :data="['订单量', '销售额', '用户数', '退单量']" bg-color="#9dc35b"></nav-menu>
           </div>
-          <div class="module average-view">average-view</div>
-          <div class="module schedule-view"></div>
+          <div class="module average-view">
+            <average-view :data="realTimeOrder"></average-view>
+          </div>
+          <div class="module schedule-view">schedule-view</div>
         </div>
         <div class="module sale-rank">sale-rank</div>
       </div>
@@ -60,6 +62,7 @@ import RiderGrowth from "@/modules/rider-growth.vue";
 import SaleCategory from "@/modules/sale-category.vue";
 import AverageAge from "@/modules/average-age.vue";
 import TotalDevice from "@/modules/total-device.vue";
+import AverageView from "@/modules/average-view.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
