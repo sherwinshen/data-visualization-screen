@@ -35,7 +35,9 @@
       </div>
       <div class="inline">
         <div class="module sale-data">sale-data</div>
-        <div class="module plan-list">plan-list</div>
+        <div class="module plan-list">
+          <plan-list :data="userData.areaSales"></plan-list>
+        </div>
       </div>
       <div class="inline">
         <div class="order-trend">
@@ -63,6 +65,7 @@ import SaleCategory from "@/modules/sale-category.vue";
 import AverageAge from "@/modules/average-age.vue";
 import TotalDevice from "@/modules/total-device.vue";
 import AverageView from "@/modules/average-view.vue";
+import PlanList from "@/modules/plan-list.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
