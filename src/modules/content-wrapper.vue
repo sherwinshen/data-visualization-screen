@@ -49,7 +49,9 @@
           <div class="module average-view">
             <average-view :data="realTimeOrder"></average-view>
           </div>
-          <div class="module schedule-view">schedule-view</div>
+          <div class="module schedule-view">
+            <schedule-view></schedule-view>
+          </div>
         </div>
         <div class="module sale-rank">
           <sale-rank :data="userData.areaTop"></sale-rank>
@@ -72,6 +74,7 @@ import AverageView from "@/modules/average-view.vue";
 import PlanList from "@/modules/plan-list.vue";
 import SaleRank from "@/modules/sale-rank.vue";
 import SaleData from "@/modules/sale-data.vue";
+import ScheduleView from "@/modules/schedule-view.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });

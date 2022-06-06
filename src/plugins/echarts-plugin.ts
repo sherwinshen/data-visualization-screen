@@ -12,6 +12,7 @@ import {
   DatasetComponent,
   TransformComponent,
   LegendComponent,
+  CalendarComponent,
 } from "echarts/components";
 
 use([
@@ -28,6 +29,7 @@ use([
   DatasetComponent,
   TransformComponent,
   LegendComponent,
+  CalendarComponent,
 ]);
 
 export default ECharts;
