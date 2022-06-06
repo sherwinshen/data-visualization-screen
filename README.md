@@ -1,16 +1,31 @@
-# Vue 3 + TypeScript + Vite
+# 数据可视化 - 大屏项目
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> 项目主要参考自[实战「慕课外卖」数据大屏](http://www.youbaobao.xyz/datav-docs/)，更多内容请移步 👉 [数据可视化之入门指南](https://www.yuque.com/sherwin-sw/fe/data-visualization)。
 
-## Recommended IDE Setup
+![data-visualization-report.png](./docs/data-visualization-screen.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## 1.1 技术栈
 
-## Type Support For `.vue` Imports in TS
+- Vue3 + TS
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+- AntV-G2Plot(主)
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+- ECharts(次) + vue-echarts
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+## 1.2 关键组件
+
+### 1.2.1 大屏容器组件
+
+[screen-container 组件](./src/components/screen-container.vue)，能够根据当前屏幕尺寸和用户期望尺寸进行比例缩放以达到适配（铺满屏幕）的目的。
+
+### 1.2.2 数字滚动组件
+
+基于 [vue3-count-to](https://www.npmjs.com/package/vue3-count-to) 依赖的组件，通过设定 startVal 和 endVal 实现数字滚动的动态效果。 
+
+### 1.2.3 自动轮播组件
+
+[auto-scroll 组件](./src/components/auto-scroll.vue)，在设定表头和内容后能够自动向上滚动轮播内容（也可借助 Swiper 库来实现）。
+
+---
+
+如果发现本项目有错误，欢迎提交 issues 指正，也可联系邮箱 [sherwin_sw@163.com](mailto:sherwin_sw@163.com)。
