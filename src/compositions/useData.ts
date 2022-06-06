@@ -54,7 +54,9 @@ export default function ({ once = true }) {
     }
   };
   const requestData = async () => {
-    mapData.value = getMapData(); // 地图数据
+    getMapData().then((res) => {
+      mapData.value = res;
+    }); // 地图数据
     await getAndHandleUserData();
     // 为体现效果延后1s展示内容
     setTimeout(() => {

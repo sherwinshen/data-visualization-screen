@@ -57,6 +57,9 @@ const initChart = () => {
         radius: 0.9,
         color: colors,
         label: false,
+        pieStyle: {
+          lineWidth: 0,
+        },
         supportCSSTransform: true, // 外部设置了 transform 则必须要设置为 true
       } as RoseOptions;
       chart.value = new Rose(chartRef.value, options);

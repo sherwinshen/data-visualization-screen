@@ -34,7 +34,9 @@
         <nav-menu :data="['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉']"></nav-menu>
       </div>
       <div class="inline">
-        <div class="module sale-data">sale-data</div>
+        <div class="module sale-data">
+          <sale-data :data="mapData"></sale-data>
+        </div>
         <div class="module plan-list">
           <plan-list :data="userData.areaSales"></plan-list>
         </div>
@@ -69,6 +71,7 @@ import TotalDevice from "@/modules/total-device.vue";
 import AverageView from "@/modules/average-view.vue";
 import PlanList from "@/modules/plan-list.vue";
 import SaleRank from "@/modules/sale-rank.vue";
+import SaleData from "@/modules/sale-data.vue";
 import useData from "@/compositions/useData";
 
 const { ready, mapData, userData, ageData, deviceData, realTimeOrder } = useData({ once: false });
